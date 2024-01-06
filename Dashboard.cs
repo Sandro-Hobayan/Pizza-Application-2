@@ -27,9 +27,18 @@ namespace Pizza_Application_2
 
         }
 
+        private void ClearPanel()
+        {
+            pnlmain.Controls.Clear();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
+            ClearPanel();
+            label2.Text = "Create order";
+            CreateOrder co = new CreateOrder() { TopLevel = false, TopMost = true };
+            pnlmain.Controls.Add(co);
+            co.Show();
         }
 
         private void btnaccount_Click(object sender, EventArgs e)
@@ -78,6 +87,15 @@ namespace Pizza_Application_2
         private void label4_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ClearPanel();
+            label2.Text = "Recent orders";
+            RecentOrders ro = new RecentOrders() { TopLevel = false, TopMost = true };
+            pnlmain.Controls.Add(ro);
+            ro.Show();
         }
     }
 }

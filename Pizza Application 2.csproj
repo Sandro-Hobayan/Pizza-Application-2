@@ -68,6 +68,12 @@
     <Compile Include="Accounts.Designer.cs">
       <DependentUpon>Accounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateOrder.Designer.cs">
+      <DependentUpon>CreateOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,12 +88,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RecentOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecentOrders.Designer.cs">
+      <DependentUpon>RecentOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Signup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateOrder.resx">
+      <DependentUpon>CreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +119,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RecentOrders.resx">
+      <DependentUpon>RecentOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
     </EmbeddedResource>
