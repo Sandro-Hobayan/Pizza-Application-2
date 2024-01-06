@@ -14,7 +14,7 @@ namespace Pizza_Application_2
     public partial class Form1 : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\HOBAYAN\OneDrive\Desktop\visual studio c#\Pizza Application 2\PizzarapDatabase.mdf"";Integrated Security=True");
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -81,6 +81,9 @@ namespace Pizza_Application_2
                                 this.Hide();
                                 Dashboard home = new Dashboard();
                                 home.Show();
+
+                                Dashboard.instance.btnacc.Text = txtuser.Text;
+
                             }
                             else
                             {
