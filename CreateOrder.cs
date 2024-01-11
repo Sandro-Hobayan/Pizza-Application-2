@@ -62,25 +62,25 @@ namespace Pizza_Application_2
             if(radsmall.Checked == true)
             {
                 lblsize.Text = "Small";
-                sizecost = 0;
+                sizecost = 1;
                 lblsizecost.Text = sizecost.ToString();
             }
             else if(radmedium.Checked == true)
             {
                 lblsize.Text = "Medium";
-                sizecost = 40;
+                sizecost = 2;
                 lblsizecost.Text = sizecost.ToString();
             }
             else if(radlarge.Checked == true)
             {
                 lblsize.Text = "Large";
-                sizecost = 80;
+                sizecost = 3;
                 lblsizecost.Text = sizecost.ToString();
             }
             else if(radextralarge.Checked == true)
             {
                 lblsize.Text = "Extra large";
-                sizecost = 150;
+                sizecost = 4;
                 lblsizecost.Text = sizecost.ToString();
             }
 
@@ -107,7 +107,7 @@ namespace Pizza_Application_2
             }
 
             //pizza total
-            float pizzatotal = float.Parse(lblpizzacost.Text) + float.Parse(lblsizecost.Text) + float.Parse(lblcrustcost.Text);
+            float pizzatotal = float.Parse(lblpizzacost.Text) * float.Parse(lblsizecost.Text) + float.Parse(lblcrustcost.Text);
             lblpizzatotal.Text = pizzatotal.ToString();
 
 
@@ -137,7 +137,7 @@ namespace Pizza_Application_2
             if(chkonions.Checked == true)
             {
                 onions += chkonions.Text;
-                onionscost = 5;
+                onionscost = 10;
             }
             else
             {

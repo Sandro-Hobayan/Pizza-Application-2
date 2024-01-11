@@ -97,5 +97,10 @@ namespace Pizza_Application_2
             pnlmain.Controls.Add(ro);
             ro.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
