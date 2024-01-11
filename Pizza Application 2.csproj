@@ -160,6 +160,13 @@
     <None Include="images\bg4.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DatabasePizza2.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DatabasePizza2_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DatabasePizza2.mdf</DependentUpon>
+    </Content>
     <None Include="images\LogIn.png" />
     <None Include="images\Logout.png" />
     <Content Include="Database1.mdf">

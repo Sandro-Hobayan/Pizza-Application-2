@@ -100,7 +100,11 @@ namespace Pizza_Application_2
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            ClearPanel();
+            label2.Text = "Pending orders";
+            PendingOrders po = new PendingOrders() { TopLevel = false, TopMost = true };
+            pnlmain.Controls.Add(po);
+            po.Show();
         }
     }
 }

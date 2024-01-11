@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Pizza_Application_2
-{
+{ 
     public partial class CreateOrder : Form
     {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\HOBAYAN\source\repos\Pizza-Application-2\DatabasePizza2.mdf;Integrated Security=True");
+        private List<string> selectedtoppings = new List<string>();
+
         public CreateOrder()
         {
             InitializeComponent();
@@ -29,6 +33,9 @@ namespace Pizza_Application_2
 
         private void button2_Click(object sender, EventArgs e)
         {
+            lblsizetimes.Text = "x";
+            lblcrustplus.Text = "+";
+
             //Pizza
             float cost;
             if (radhawaian.Checked == true)
@@ -174,16 +181,78 @@ namespace Pizza_Application_2
                 pepperscost = 0;
             }
 
-            lbltoppings1.Text = $"{extracheese}   {mushrooms}   {onions}";
-            lbltoppings2.Text = $"{tomatoes}   {pineapple}   {peppers}";
+            lbltoppings1.Text = $"- {extracheese}   {mushrooms}   {onions} \n \n {tomatoes}   {pineapple}   {peppers}";
 
             //toppings total
             float toppingstotal = extracheesecost + mushroomscost + onionscost + tomatoescost + pineapplecost + pepperscost;
             lbltoppingstotal.Text = toppingstotal.ToString();
 
+            //order status
+            if(radnotpaid.Checked == true)
+            {
+                lblorderstatus.Text = "Not paid yet";
+            }
+            else
+            {
+                lblorderstatus.Text = "Paid";
+            }
+
             //overall total
             float overalltotal = float.Parse(lblpizzatotal.Text) + float.Parse(lbltoppingstotal.Text);
             lbloveralltotal.Text = overalltotal.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (lblpizza.Text == "" || lbloveralltotal.Text == "")
+            {
+                MessageBox.Show("Please make order first", "No order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Place order?", "Order information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dr == DialogResult.Yes)
+                {
+                    if (con.State != ConnectionState.Open)
+                    {
+                        try
+                        {
+                            con.Open();
+                            string insertData = "INSERT INTO orders (Pizza, Size, Crusttype, Extratoppings, Total, Status) " +
+                                    "VALUES(@Pizza, @Size, @Crusttype, @Extratoppings, @Total, @Status)";
+
+
+                            using (SqlCommand cmd = new SqlCommand(insertData, con))
+                            {
+                                cmd.Parameters.AddWithValue("@Pizza", lblpizza.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Size", lblsize.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Crusttype", lblcrust.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Extratoppings", lbltoppings1.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Total", lbloveralltotal.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Status", lblorderstatus.Text.Trim());
+
+                                cmd.ExecuteNonQuery();
+
+                                MessageBox.Show("Order placed", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error connecting database" + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private void CreateOrder_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

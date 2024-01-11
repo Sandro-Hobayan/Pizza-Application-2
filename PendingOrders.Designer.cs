@@ -38,6 +38,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PendingOrders";
             this.Text = "PendingOrders";
+            this.Load += new System.EventHandler(this.PendingOrders_Load);
             this.ResumeLayout(false);
 
         }

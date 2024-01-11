@@ -57,7 +57,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.lbltoppingstotal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.lbltoppings2 = new System.Windows.Forms.Label();
             this.lbltoppings1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -93,6 +92,12 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.radnotpaid = new System.Windows.Forms.RadioButton();
+            this.radpaid = new System.Windows.Forms.RadioButton();
+            this.lblorderstatus = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblsizetimes = new System.Windows.Forms.Label();
+            this.lblcrustplus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -134,7 +139,6 @@
             this.radveggie.Name = "radveggie";
             this.radveggie.Size = new System.Drawing.Size(103, 29);
             this.radveggie.TabIndex = 3;
-            this.radveggie.TabStop = true;
             this.radveggie.Text = "Veggie";
             this.radveggie.UseVisualStyleBackColor = true;
             this.radveggie.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
@@ -142,6 +146,7 @@
             // radhawaian
             // 
             this.radhawaian.AutoSize = true;
+            this.radhawaian.Checked = true;
             this.radhawaian.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radhawaian.ForeColor = System.Drawing.Color.White;
             this.radhawaian.Location = new System.Drawing.Point(6, 39);
@@ -161,7 +166,6 @@
             this.radhamandcheese.Name = "radhamandcheese";
             this.radhamandcheese.Size = new System.Drawing.Size(210, 29);
             this.radhamandcheese.TabIndex = 1;
-            this.radhamandcheese.TabStop = true;
             this.radhamandcheese.Text = "Ham and Cheese";
             this.radhamandcheese.UseVisualStyleBackColor = true;
             // 
@@ -174,7 +178,6 @@
             this.radpepperoni.Name = "radpepperoni";
             this.radpepperoni.Size = new System.Drawing.Size(137, 29);
             this.radpepperoni.TabIndex = 2;
-            this.radpepperoni.TabStop = true;
             this.radpepperoni.Text = "Pepperoni";
             this.radpepperoni.UseVisualStyleBackColor = true;
             this.radpepperoni.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
@@ -208,13 +211,13 @@
             this.radextralarge.Name = "radextralarge";
             this.radextralarge.Size = new System.Drawing.Size(145, 29);
             this.radextralarge.TabIndex = 3;
-            this.radextralarge.TabStop = true;
             this.radextralarge.Text = "Extra large";
             this.radextralarge.UseVisualStyleBackColor = true;
             // 
             // radsmall
             // 
             this.radsmall.AutoSize = true;
+            this.radsmall.Checked = true;
             this.radsmall.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radsmall.ForeColor = System.Drawing.Color.White;
             this.radsmall.Location = new System.Drawing.Point(6, 42);
@@ -234,7 +237,6 @@
             this.radmedium.Name = "radmedium";
             this.radmedium.Size = new System.Drawing.Size(112, 29);
             this.radmedium.TabIndex = 1;
-            this.radmedium.TabStop = true;
             this.radmedium.Text = "Medium";
             this.radmedium.UseVisualStyleBackColor = true;
             // 
@@ -247,7 +249,6 @@
             this.radlarge.Name = "radlarge";
             this.radlarge.Size = new System.Drawing.Size(90, 29);
             this.radlarge.TabIndex = 2;
-            this.radlarge.TabStop = true;
             this.radlarge.Text = "Large";
             this.radlarge.UseVisualStyleBackColor = true;
             // 
@@ -264,7 +265,7 @@
             this.groupBox3.ForeColor = System.Drawing.Color.White;
             this.groupBox3.Location = new System.Drawing.Point(317, 282);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(183, 314);
+            this.groupBox3.Size = new System.Drawing.Size(183, 211);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Crust type";
@@ -272,6 +273,7 @@
             // radthick
             // 
             this.radthick.AutoSize = true;
+            this.radthick.Checked = true;
             this.radthick.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radthick.ForeColor = System.Drawing.Color.White;
             this.radthick.Location = new System.Drawing.Point(6, 42);
@@ -291,7 +293,6 @@
             this.radthin.Name = "radthin";
             this.radthin.Size = new System.Drawing.Size(76, 29);
             this.radthin.TabIndex = 1;
-            this.radthin.TabStop = true;
             this.radthin.Text = "Thin";
             this.radthin.UseVisualStyleBackColor = true;
             // 
@@ -304,7 +305,6 @@
             this.radioButton12.Name = "radioButton12";
             this.radioButton12.Size = new System.Drawing.Size(118, 29);
             this.radioButton12.TabIndex = 2;
-            this.radioButton12.TabStop = true;
             this.radioButton12.Text = "No crust";
             this.radioButton12.UseVisualStyleBackColor = true;
             // 
@@ -401,6 +401,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.Controls.Add(this.label26);
+            this.panel1.Controls.Add(this.lblorderstatus);
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
@@ -444,7 +446,6 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
             this.panel4.Controls.Add(this.panel6);
-            this.panel4.Controls.Add(this.lbltoppings2);
             this.panel4.Controls.Add(this.lbltoppings1);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(3, 229);
@@ -483,25 +484,14 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Extra toppings total:";
             // 
-            // lbltoppings2
-            // 
-            this.lbltoppings2.AutoSize = true;
-            this.lbltoppings2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltoppings2.Location = new System.Drawing.Point(9, 74);
-            this.lbltoppings2.Name = "lbltoppings2";
-            this.lbltoppings2.Size = new System.Drawing.Size(12, 16);
-            this.lbltoppings2.TabIndex = 11;
-            this.lbltoppings2.Text = "-";
-            // 
             // lbltoppings1
             // 
             this.lbltoppings1.AutoSize = true;
             this.lbltoppings1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltoppings1.Location = new System.Drawing.Point(9, 41);
             this.lbltoppings1.Name = "lbltoppings1";
-            this.lbltoppings1.Size = new System.Drawing.Size(12, 16);
+            this.lbltoppings1.Size = new System.Drawing.Size(0, 16);
             this.lbltoppings1.TabIndex = 10;
-            this.lbltoppings1.Text = "-";
             // 
             // label4
             // 
@@ -516,6 +506,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblcrustplus);
+            this.panel2.Controls.Add(this.lblsizetimes);
             this.panel2.Controls.Add(this.lblcrustcost);
             this.panel2.Controls.Add(this.lblsizecost);
             this.panel2.Controls.Add(this.lblcrust);
@@ -559,9 +551,8 @@
             this.lblcrust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblcrust.Location = new System.Drawing.Point(42, 135);
             this.lblcrust.Name = "lblcrust";
-            this.lblcrust.Size = new System.Drawing.Size(12, 16);
+            this.lblcrust.Size = new System.Drawing.Size(0, 16);
             this.lblcrust.TabIndex = 9;
-            this.lblcrust.Text = "-";
             // 
             // lblsize
             // 
@@ -569,9 +560,8 @@
             this.lblsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblsize.Location = new System.Drawing.Point(42, 77);
             this.lblsize.Name = "lblsize";
-            this.lblsize.Size = new System.Drawing.Size(12, 16);
+            this.lblsize.Size = new System.Drawing.Size(0, 16);
             this.lblsize.TabIndex = 8;
-            this.lblsize.Text = "-";
             // 
             // lblpizza
             // 
@@ -579,9 +569,8 @@
             this.lblpizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblpizza.Location = new System.Drawing.Point(42, 27);
             this.lblpizza.Name = "lblpizza";
-            this.lblpizza.Size = new System.Drawing.Size(12, 16);
+            this.lblpizza.Size = new System.Drawing.Size(0, 16);
             this.lblpizza.TabIndex = 7;
-            this.lblpizza.Text = "-";
             // 
             // lblpizzacost
             // 
@@ -661,10 +650,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(516, 499);
+            this.button2.Location = new System.Drawing.Point(516, 502);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 28);
+            this.button2.Size = new System.Drawing.Size(116, 31);
             this.button2.TabIndex = 10;
             this.button2.Text = "Compute";
             this.button2.UseVisualStyleBackColor = false;
@@ -676,13 +665,14 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(636, 499);
+            this.button1.Location = new System.Drawing.Point(636, 502);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 28);
+            this.button1.Size = new System.Drawing.Size(95, 31);
             this.button1.TabIndex = 11;
             this.button1.Text = "Place order";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -690,10 +680,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(735, 499);
+            this.button3.Location = new System.Drawing.Point(735, 502);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 28);
+            this.button3.Size = new System.Drawing.Size(134, 31);
             this.button3.TabIndex = 12;
             this.button3.Text = "Make new order";
             this.button3.UseVisualStyleBackColor = false;
@@ -885,6 +875,73 @@
             this.label24.TabIndex = 19;
             this.label24.Text = "80";
             // 
+            // radnotpaid
+            // 
+            this.radnotpaid.AutoSize = true;
+            this.radnotpaid.Checked = true;
+            this.radnotpaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radnotpaid.ForeColor = System.Drawing.Color.White;
+            this.radnotpaid.Location = new System.Drawing.Point(339, 504);
+            this.radnotpaid.Name = "radnotpaid";
+            this.radnotpaid.Size = new System.Drawing.Size(118, 29);
+            this.radnotpaid.TabIndex = 7;
+            this.radnotpaid.TabStop = true;
+            this.radnotpaid.Text = "Not paid";
+            this.radnotpaid.UseVisualStyleBackColor = true;
+            // 
+            // radpaid
+            // 
+            this.radpaid.AutoSize = true;
+            this.radpaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radpaid.ForeColor = System.Drawing.Color.White;
+            this.radpaid.Location = new System.Drawing.Point(339, 547);
+            this.radpaid.Name = "radpaid";
+            this.radpaid.Size = new System.Drawing.Size(77, 29);
+            this.radpaid.TabIndex = 8;
+            this.radpaid.Text = "Paid";
+            this.radpaid.UseVisualStyleBackColor = true;
+            // 
+            // lblorderstatus
+            // 
+            this.lblorderstatus.AutoSize = true;
+            this.lblorderstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblorderstatus.ForeColor = System.Drawing.Color.White;
+            this.lblorderstatus.Location = new System.Drawing.Point(215, 445);
+            this.lblorderstatus.Name = "lblorderstatus";
+            this.lblorderstatus.Size = new System.Drawing.Size(0, 20);
+            this.lblorderstatus.TabIndex = 7;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(5, 445);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(114, 20);
+            this.label26.TabIndex = 8;
+            this.label26.Text = "Order status:";
+            // 
+            // lblsizetimes
+            // 
+            this.lblsizetimes.AutoSize = true;
+            this.lblsizetimes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsizetimes.Location = new System.Drawing.Point(285, 77);
+            this.lblsizetimes.Name = "lblsizetimes";
+            this.lblsizetimes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblsizetimes.Size = new System.Drawing.Size(0, 16);
+            this.lblsizetimes.TabIndex = 12;
+            // 
+            // lblcrustplus
+            // 
+            this.lblcrustplus.AutoSize = true;
+            this.lblcrustplus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcrustplus.Location = new System.Drawing.Point(285, 135);
+            this.lblcrustplus.Name = "lblcrustplus";
+            this.lblcrustplus.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblcrustplus.Size = new System.Drawing.Size(0, 16);
+            this.lblcrustplus.TabIndex = 13;
+            // 
             // CreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -892,7 +949,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(881, 623);
+            this.Controls.Add(this.radpaid);
             this.Controls.Add(this.button3);
+            this.Controls.Add(this.radnotpaid);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
@@ -903,6 +962,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateOrder";
             this.Text = "d";
+            this.Load += new System.EventHandler(this.CreateOrder_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -912,6 +972,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -923,6 +984,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -973,7 +1035,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbltoppingstotal;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label lbltoppings2;
         private System.Windows.Forms.Label lbltoppings1;
         private System.Windows.Forms.Label lbloveralltotal;
         private System.Windows.Forms.Label label11;
@@ -993,5 +1054,11 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.RadioButton radpaid;
+        private System.Windows.Forms.RadioButton radnotpaid;
+        private System.Windows.Forms.Label lblorderstatus;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblcrustplus;
+        private System.Windows.Forms.Label lblsizetimes;
     }
 }
