@@ -74,5 +74,58 @@ namespace Pizza_Application_2
                 lblstatus.ForeColor = Color.DarkGreen;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (lblid.Text == "" || lbltotal.Text == "")
+            {
+                MessageBox.Show("Select order first", "No selected order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Order done?", "Order information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dr == DialogResult.Yes)
+                {
+                    if (con.State != ConnectionState.Open)
+                    {
+                        try
+                        {
+                            con.Open();
+                            string insertData = "INSERT INTO doneorders (Orderid, Pizza, Size, Crusttype, Extratoppings, Total, Status, Orderr) " +
+                                    "VALUES(@Orderid, @Pizza, @Size, @Crusttype, @Extratoppings, @Total, @Status, @Orderr)";
+
+                            using (SqlCommand cmd = new SqlCommand(insertData, con))
+                            {
+                                cmd.Parameters.AddWithValue("@Orderid", lblid.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Pizza", lblpizza.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Size", lblsize.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Crusttype", lblcrust.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Extratoppings", lbltoppings.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Total", lbltotal.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Status", lblstatus.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Orderr", lblorder.Text.Trim());
+
+                                cmd.ExecuteNonQuery();
+
+                                MessageBox.Show("Done", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error connecting database" + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            con.Close();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
