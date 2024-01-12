@@ -53,5 +53,26 @@ namespace Pizza_Application_2
                 lblorder.Text = dgvrow.Cells[7].Value.ToString();
             }
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            if (lblorder.Text == "On process")
+            {
+                lblorder.ForeColor = Color.Yellow;
+            }
+            else
+            {
+                lblorder.ForeColor = Color.DarkGreen;
+            }
+
+            if(lblstatus.Text == "Not paid yet")
+            {
+                lblstatus.ForeColor = Color.DarkOrange;
+            }
+            else
+            {
+                lblstatus.ForeColor = Color.DarkGreen;
+            }
+        }
     }
 }

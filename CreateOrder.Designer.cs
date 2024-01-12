@@ -595,7 +595,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Black;
+            this.panel1.BackColor = System.Drawing.Color.Silver;
             this.panel1.Controls.Add(this.label25);
             this.panel1.Controls.Add(this.lblorder);
             this.panel1.Controls.Add(this.label26);
@@ -612,7 +612,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.ForeColor = System.Drawing.Color.Black;
             this.label26.Location = new System.Drawing.Point(6, 431);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(44, 16);
@@ -631,7 +631,7 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.Silver;
+            this.panel5.BackColor = System.Drawing.Color.DarkGray;
             this.panel5.Controls.Add(this.lbloveralltotal);
             this.panel5.Controls.Add(this.label6);
             this.panel5.Location = new System.Drawing.Point(3, 390);
@@ -1008,7 +1008,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
+            this.label25.ForeColor = System.Drawing.Color.Black;
             this.label25.Location = new System.Drawing.Point(6, 457);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(82, 16);

@@ -165,7 +165,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.LightGray;
+            this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.lblid);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.lbltotal);
@@ -180,6 +180,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(378, 151);
             this.panel2.TabIndex = 16;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label5
             // 
@@ -198,7 +199,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 83);
+            this.label6.Location = new System.Drawing.Point(15, 45);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 20);
@@ -210,7 +211,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 46);
+            this.label7.Location = new System.Drawing.Point(15, 80);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 20);
@@ -222,7 +223,7 @@
             this.lblorder.AutoSize = true;
             this.lblorder.BackColor = System.Drawing.Color.Transparent;
             this.lblorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblorder.Location = new System.Drawing.Point(232, 46);
+            this.lblorder.Location = new System.Drawing.Point(244, 80);
             this.lblorder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblorder.Name = "lblorder";
             this.lblorder.Size = new System.Drawing.Size(0, 20);
@@ -233,7 +234,7 @@
             this.lblstatus.AutoSize = true;
             this.lblstatus.BackColor = System.Drawing.Color.Transparent;
             this.lblstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblstatus.Location = new System.Drawing.Point(232, 83);
+            this.lblstatus.Location = new System.Drawing.Point(244, 45);
             this.lblstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblstatus.Name = "lblstatus";
             this.lblstatus.Size = new System.Drawing.Size(0, 20);
@@ -244,7 +245,7 @@
             this.lbltotal.AutoSize = true;
             this.lbltotal.BackColor = System.Drawing.Color.Transparent;
             this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(273, 118);
+            this.lbltotal.Location = new System.Drawing.Point(244, 118);
             this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbltotal.Name = "lbltotal";
             this.lbltotal.Size = new System.Drawing.Size(0, 20);
@@ -299,7 +300,7 @@
             this.lblid.AutoSize = true;
             this.lblid.BackColor = System.Drawing.Color.Transparent;
             this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(232, 11);
+            this.lblid.Location = new System.Drawing.Point(244, 11);
             this.lblid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblid.Name = "lblid";
             this.lblid.Size = new System.Drawing.Size(0, 20);

@@ -190,20 +190,24 @@ namespace Pizza_Application_2
             //order
             if(radnotpaid.Checked == true)
             {
+                lblorderstatus.ForeColor = Color.DarkOrange;
                 lblorderstatus.Text = "Not paid yet";
             }
             else
             {
+                lblorderstatus.ForeColor = Color.DarkGreen;
                 lblorderstatus.Text = "Paid";
             }
 
             //order status
             if(radonprocess.Checked == true)
             {
+                lblorder.ForeColor = Color.Yellow;
                 lblorder.Text = "On process";
             }
             else
             {
+                lblorder.ForeColor = Color.DarkGreen;
                 lblorder.Text = "Received";
             }
 
@@ -216,7 +220,7 @@ namespace Pizza_Application_2
         {
             if (lblpizza.Text == "" || lbloveralltotal.Text == "")
             {
-                MessageBox.Show("Please make order first", "No order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Make order first", "No order", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -243,7 +247,7 @@ namespace Pizza_Application_2
                                 cmd.Parameters.AddWithValue("@Orderr", lblorder.Text.Trim());
 
                                 cmd.ExecuteNonQuery();
-
+                                
                                 MessageBox.Show("Order placed", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
