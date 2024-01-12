@@ -220,7 +220,7 @@ namespace Pizza_Application_2
             }
             else
             {
-                DialogResult dr = MessageBox.Show("Place order?", "Order information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dr = MessageBox.Show("Place order?", "Order Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == DialogResult.Yes)
                 {
                     if (con.State != ConnectionState.Open)

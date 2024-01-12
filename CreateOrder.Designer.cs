@@ -787,7 +787,7 @@
             // 
             this.lblcrust.AutoSize = true;
             this.lblcrust.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcrust.Location = new System.Drawing.Point(42, 135);
+            this.lblcrust.Location = new System.Drawing.Point(95, 135);
             this.lblcrust.Name = "lblcrust";
             this.lblcrust.Size = new System.Drawing.Size(0, 16);
             this.lblcrust.TabIndex = 9;
@@ -796,7 +796,7 @@
             // 
             this.lblsize.AutoSize = true;
             this.lblsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsize.Location = new System.Drawing.Point(42, 77);
+            this.lblsize.Location = new System.Drawing.Point(95, 77);
             this.lblsize.Name = "lblsize";
             this.lblsize.Size = new System.Drawing.Size(0, 16);
             this.lblsize.TabIndex = 8;
@@ -805,7 +805,7 @@
             // 
             this.lblpizza.AutoSize = true;
             this.lblpizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpizza.Location = new System.Drawing.Point(42, 27);
+            this.lblpizza.Location = new System.Drawing.Point(95, 27);
             this.lblpizza.Name = "lblpizza";
             this.lblpizza.Size = new System.Drawing.Size(0, 16);
             this.lblpizza.TabIndex = 7;
