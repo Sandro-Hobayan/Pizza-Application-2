@@ -33,6 +33,18 @@ namespace Pizza_Application_2
             con.Close();
         }
 
+        private void display()
+        {
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM orders", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            //dgv1.AutoGenerateColumns = false;
+            dgv1.DataSource = (dt);
+
+            con.Close();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             
@@ -106,6 +118,7 @@ namespace Pizza_Application_2
                                 cmd.Parameters.AddWithValue("@Orderr", lblorder.Text.Trim());
 
                                 cmd.ExecuteNonQuery();
+                                
 
                                 MessageBox.Show("Done", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
@@ -121,6 +134,15 @@ namespace Pizza_Application_2
                     }
                 }
             }
+        }
+
+        private void DeleteData()
+        {
+            SqlCommand cmd1 = con.CreateCommand();
+            cmd1.CommandType = CommandType.Text;
+            cmd1.CommandText = "DELETE FROM orders where Order id = '" + lblid.Text + "'";
+            //cmd1.ExecuteNonQuery();
+            display();
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -32,22 +32,24 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblorder = new System.Windows.Forms.Label();
-            this.lblstatus = new System.Windows.Forms.Label();
-            this.lbltotal = new System.Windows.Forms.Label();
-            this.lblpizza = new System.Windows.Forms.Label();
-            this.lblsize = new System.Windows.Forms.Label();
-            this.lblcrust = new System.Windows.Forms.Label();
             this.lbltoppings = new System.Windows.Forms.Label();
+            this.lblcrust = new System.Windows.Forms.Label();
+            this.lblsize = new System.Windows.Forms.Label();
+            this.lblpizza = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.lblid = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.lbltotal = new System.Windows.Forms.Label();
+            this.lblstatus = new System.Windows.Forms.Label();
+            this.lblorder = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +58,6 @@
             this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.crust = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toppings = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -128,6 +128,173 @@
             this.panel1.Size = new System.Drawing.Size(378, 473);
             this.panel1.TabIndex = 13;
             // 
+            // lbltoppings
+            // 
+            this.lbltoppings.AutoSize = true;
+            this.lbltoppings.BackColor = System.Drawing.Color.Transparent;
+            this.lbltoppings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltoppings.Location = new System.Drawing.Point(34, 386);
+            this.lbltoppings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltoppings.Name = "lbltoppings";
+            this.lbltoppings.Size = new System.Drawing.Size(0, 20);
+            this.lbltoppings.TabIndex = 20;
+            // 
+            // lblcrust
+            // 
+            this.lblcrust.AutoSize = true;
+            this.lblcrust.BackColor = System.Drawing.Color.Transparent;
+            this.lblcrust.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblcrust.Location = new System.Drawing.Point(108, 324);
+            this.lblcrust.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblcrust.Name = "lblcrust";
+            this.lblcrust.Size = new System.Drawing.Size(0, 20);
+            this.lblcrust.TabIndex = 19;
+            // 
+            // lblsize
+            // 
+            this.lblsize.AutoSize = true;
+            this.lblsize.BackColor = System.Drawing.Color.Transparent;
+            this.lblsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblsize.Location = new System.Drawing.Point(108, 256);
+            this.lblsize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblsize.Name = "lblsize";
+            this.lblsize.Size = new System.Drawing.Size(0, 20);
+            this.lblsize.TabIndex = 18;
+            // 
+            // lblpizza
+            // 
+            this.lblpizza.AutoSize = true;
+            this.lblpizza.BackColor = System.Drawing.Color.Transparent;
+            this.lblpizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblpizza.Location = new System.Drawing.Point(108, 196);
+            this.lblpizza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblpizza.Name = "lblpizza";
+            this.lblpizza.Size = new System.Drawing.Size(0, 20);
+            this.lblpizza.TabIndex = 17;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Silver;
+            this.panel2.Controls.Add(this.lblid);
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.lbltotal);
+            this.panel2.Controls.Add(this.lblstatus);
+            this.panel2.Controls.Add(this.lblorder);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(378, 151);
+            this.panel2.TabIndex = 16;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.BackColor = System.Drawing.Color.Transparent;
+            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblid.Location = new System.Drawing.Point(244, 11);
+            this.lblid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(0, 20);
+            this.lblid.TabIndex = 20;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(15, 11);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 20);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Order ID;";
+            // 
+            // lbltotal
+            // 
+            this.lbltotal.AutoSize = true;
+            this.lbltotal.BackColor = System.Drawing.Color.Transparent;
+            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbltotal.Location = new System.Drawing.Point(244, 118);
+            this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbltotal.Name = "lbltotal";
+            this.lbltotal.Size = new System.Drawing.Size(0, 20);
+            this.lbltotal.TabIndex = 18;
+            // 
+            // lblstatus
+            // 
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatus.Location = new System.Drawing.Point(244, 45);
+            this.lblstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(0, 20);
+            this.lblstatus.TabIndex = 17;
+            // 
+            // lblorder
+            // 
+            this.lblorder.AutoSize = true;
+            this.lblorder.BackColor = System.Drawing.Color.Transparent;
+            this.lblorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblorder.Location = new System.Drawing.Point(244, 80);
+            this.lblorder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblorder.Name = "lblorder";
+            this.lblorder.Size = new System.Drawing.Size(0, 20);
+            this.lblorder.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(15, 80);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Order:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(15, 45);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 20);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Status:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(15, 118);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(48, 20);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Total:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(15, 356);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Extra toppings:";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -152,172 +319,35 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Crust type:";
             // 
-            // label4
+            // button1
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 356);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Extra toppings:";
+            this.button1.BackColor = System.Drawing.Color.DimGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(333, 514);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 31);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Done";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // panel2
+            // button3
             // 
-            this.panel2.BackColor = System.Drawing.Color.Silver;
-            this.panel2.Controls.Add(this.lblid);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.lbltotal);
-            this.panel2.Controls.Add(this.lblstatus);
-            this.panel2.Controls.Add(this.lblorder);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.label5);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(378, 151);
-            this.panel2.TabIndex = 16;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(15, 118);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 20);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Total:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 45);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 20);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Status:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 80);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 20);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Order:";
-            // 
-            // lblorder
-            // 
-            this.lblorder.AutoSize = true;
-            this.lblorder.BackColor = System.Drawing.Color.Transparent;
-            this.lblorder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblorder.Location = new System.Drawing.Point(244, 80);
-            this.lblorder.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblorder.Name = "lblorder";
-            this.lblorder.Size = new System.Drawing.Size(0, 20);
-            this.lblorder.TabIndex = 16;
-            // 
-            // lblstatus
-            // 
-            this.lblstatus.AutoSize = true;
-            this.lblstatus.BackColor = System.Drawing.Color.Transparent;
-            this.lblstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblstatus.Location = new System.Drawing.Point(244, 45);
-            this.lblstatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblstatus.Name = "lblstatus";
-            this.lblstatus.Size = new System.Drawing.Size(0, 20);
-            this.lblstatus.TabIndex = 17;
-            // 
-            // lbltotal
-            // 
-            this.lbltotal.AutoSize = true;
-            this.lbltotal.BackColor = System.Drawing.Color.Transparent;
-            this.lbltotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotal.Location = new System.Drawing.Point(244, 118);
-            this.lbltotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbltotal.Name = "lbltotal";
-            this.lbltotal.Size = new System.Drawing.Size(0, 20);
-            this.lbltotal.TabIndex = 18;
-            // 
-            // lblpizza
-            // 
-            this.lblpizza.AutoSize = true;
-            this.lblpizza.BackColor = System.Drawing.Color.Transparent;
-            this.lblpizza.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblpizza.Location = new System.Drawing.Point(108, 196);
-            this.lblpizza.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblpizza.Name = "lblpizza";
-            this.lblpizza.Size = new System.Drawing.Size(0, 20);
-            this.lblpizza.TabIndex = 17;
-            // 
-            // lblsize
-            // 
-            this.lblsize.AutoSize = true;
-            this.lblsize.BackColor = System.Drawing.Color.Transparent;
-            this.lblsize.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblsize.Location = new System.Drawing.Point(108, 256);
-            this.lblsize.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblsize.Name = "lblsize";
-            this.lblsize.Size = new System.Drawing.Size(0, 20);
-            this.lblsize.TabIndex = 18;
-            // 
-            // lblcrust
-            // 
-            this.lblcrust.AutoSize = true;
-            this.lblcrust.BackColor = System.Drawing.Color.Transparent;
-            this.lblcrust.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcrust.Location = new System.Drawing.Point(108, 324);
-            this.lblcrust.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblcrust.Name = "lblcrust";
-            this.lblcrust.Size = new System.Drawing.Size(0, 20);
-            this.lblcrust.TabIndex = 19;
-            // 
-            // lbltoppings
-            // 
-            this.lbltoppings.AutoSize = true;
-            this.lbltoppings.BackColor = System.Drawing.Color.Transparent;
-            this.lbltoppings.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltoppings.Location = new System.Drawing.Point(34, 386);
-            this.lbltoppings.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbltoppings.Name = "lbltoppings";
-            this.lbltoppings.Size = new System.Drawing.Size(0, 20);
-            this.lbltoppings.TabIndex = 20;
-            // 
-            // lblid
-            // 
-            this.lblid.AutoSize = true;
-            this.lblid.BackColor = System.Drawing.Color.Transparent;
-            this.lblid.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblid.Location = new System.Drawing.Point(244, 11);
-            this.lblid.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblid.Name = "lblid";
-            this.lblid.Size = new System.Drawing.Size(0, 20);
-            this.lblid.TabIndex = 20;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 11);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 20);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Order ID;";
+            this.button3.BackColor = System.Drawing.Color.DimGray;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(182, 514);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(135, 31);
+            this.button3.TabIndex = 15;
+            this.button3.Text = "Order received";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // orderid
             // 
@@ -371,36 +401,6 @@
             this.toppings.Name = "toppings";
             this.toppings.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(333, 514);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 31);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Done";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DimGray;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button3.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(182, 514);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 31);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Order received";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // PendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -448,6 +448,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderid;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
@@ -456,7 +458,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn size;
         private System.Windows.Forms.DataGridViewTextBoxColumn crust;
         private System.Windows.Forms.DataGridViewTextBoxColumn toppings;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
     }
 }
