@@ -187,7 +187,7 @@ namespace Pizza_Application_2
             float toppingstotal = extracheesecost + mushroomscost + onionscost + tomatoescost + pineapplecost + pepperscost;
             lbltoppingstotal.Text = toppingstotal.ToString();
 
-            //order status
+            //order
             if(radnotpaid.Checked == true)
             {
                 lblorderstatus.Text = "Not paid yet";
@@ -195,6 +195,16 @@ namespace Pizza_Application_2
             else
             {
                 lblorderstatus.Text = "Paid";
+            }
+
+            //order status
+            if(radonprocess.Checked == true)
+            {
+                lblorder.Text = "On process";
+            }
+            else
+            {
+                lblorder.Text = "Received";
             }
 
             //overall total
@@ -218,8 +228,8 @@ namespace Pizza_Application_2
                         try
                         {
                             con.Open();
-                            string insertData = "INSERT INTO orders (Pizza, Size, Crusttype, Extratoppings, Total, Status) " +
-                                    "VALUES(@Pizza, @Size, @Crusttype, @Extratoppings, @Total, @Status)";
+                            string insertData = "INSERT INTO orders (Pizza, Size, Crusttype, Extratoppings, Total, Status, Orderr) " +
+                                    "VALUES(@Pizza, @Size, @Crusttype, @Extratoppings, @Total, @Status, @Orderr)";
 
 
                             using (SqlCommand cmd = new SqlCommand(insertData, con))
@@ -230,6 +240,7 @@ namespace Pizza_Application_2
                                 cmd.Parameters.AddWithValue("@Extratoppings", lbltoppings1.Text.Trim());
                                 cmd.Parameters.AddWithValue("@Total", lbloveralltotal.Text.Trim());
                                 cmd.Parameters.AddWithValue("@Status", lblorderstatus.Text.Trim());
+                                cmd.Parameters.AddWithValue("@Orderr", lblorder.Text.Trim());
 
                                 cmd.ExecuteNonQuery();
 

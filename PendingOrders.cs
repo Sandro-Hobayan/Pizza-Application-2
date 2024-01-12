@@ -24,5 +24,18 @@ namespace Pizza_Application_2
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM orders", con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            dgv1.AutoGenerateColumns = false;
+            dgv1.DataSource = (dt);
+
+            con.Close();
+        }
     }
 }
