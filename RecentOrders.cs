@@ -20,7 +20,7 @@ namespace Pizza_Application_2
             InitializeComponent();
         }
 
-        private void RecentOrders_Load(object sender, EventArgs e)
+        private void display()
         {
             con.Open();
             SqlDataAdapter sda = new SqlDataAdapter("SELECT * FROM doneorders", con);
@@ -33,9 +33,58 @@ namespace Pizza_Application_2
             con.Close();
         }
 
+        private void RecentOrders_Load(object sender, EventArgs e)
+        {
+            display();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                con.Open();
+                SqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "DELETE FROM doneorders WHERE Orderid = '" + lblid.Text + "'";
+                cmd1.ExecuteNonQuery();
+                con.Close();
+                display();
+            }
+            catch
+            {
+                MessageBox.Show("Error Occured");
+            }
+        }
+
+        private void dgv2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow dgvrow = dgv2.Rows[e.RowIndex];
+                lblid.Text = dgvrow.Cells[0].Value.ToString();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Do you really want to delete all data?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if(dr == DialogResult.OK)
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "DELETE FROM doneorders";
+                    cmd1.ExecuteNonQuery();
+                    con.Close();
+                    display();
+                }
+                catch
+                {
+                    MessageBox.Show("Error Occured");
+                }
+            }
         }
     }
 }

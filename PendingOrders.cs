@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Markup;
 
 namespace Pizza_Application_2
 {
@@ -47,7 +48,45 @@ namespace Pizza_Application_2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            if(lblstatus.Text == "Paid")
+            {
+                MessageBox.Show("Already paid");
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Paid?", "Order status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    if (lblstatus.Text == "Not paid yet")
+                    {
+                        lblstatus.Text = "Paid";
+                    }
+
+                    if (con.State != ConnectionState.Open)
+                    {
+                        try
+                        {
+                            con.Open();
+                            SqlCommand cmd = con.CreateCommand();
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "UPDATE orders SET Status = '" + lblstatus.Text + "' WHERE Orderid = '" + lblid.Text + "'";
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Order Paid!");
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error connecting database" + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            con.Close();
+                            display();
+                        }
+                    }
+                }
+            }
         }
 
         private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -87,24 +126,29 @@ namespace Pizza_Application_2
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddtoRecent()
         {
-            if (lblid.Text == "" || lbltotal.Text == "")
+            if (lblstatus.Text == "Not paid yet" || lblorder.Text == "On process")
             {
-                MessageBox.Show("Select order first", "No selected order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Transaction is not complete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                DialogResult dr = MessageBox.Show("Order done?", "Order information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (dr == DialogResult.Yes)
+                if (lblid.Text == "" || lbltotal.Text == "")
                 {
-                    if (con.State != ConnectionState.Open)
+                    MessageBox.Show("Select order first", "No selected order", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    DialogResult dr = MessageBox.Show("Order done?", "Order information", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    if (dr == DialogResult.Yes)
                     {
                         try
                         {
                             con.Open();
                             string insertData = "INSERT INTO doneorders (Orderid, Pizza, Size, Crusttype, Extratoppings, Total, Status, Orderr) " +
                                     "VALUES(@Orderid, @Pizza, @Size, @Crusttype, @Extratoppings, @Total, @Status, @Orderr)";
+
 
                             using (SqlCommand cmd = new SqlCommand(insertData, con))
                             {
@@ -118,14 +162,13 @@ namespace Pizza_Application_2
                                 cmd.Parameters.AddWithValue("@Orderr", lblorder.Text.Trim());
 
                                 cmd.ExecuteNonQuery();
-                                
 
-                                MessageBox.Show("Done", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Order done", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            MessageBox.Show("Error connecting database" + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Error, connecting database", "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         finally
                         {
@@ -136,18 +179,156 @@ namespace Pizza_Application_2
             }
         }
 
-        private void DeleteData()
+        private void button1_Click(object sender, EventArgs e)
         {
-            SqlCommand cmd1 = con.CreateCommand();
-            cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "DELETE FROM orders where Order id = '" + lblid.Text + "'";
-            //cmd1.ExecuteNonQuery();
+            AddtoRecent();
+            DeleteToPending();
             display();
+        }
+
+        private void DeleteToPending()
+        {
+            if(lblstatus.Text == "" && lblorder.Text == "")
+            {
+
+            }
+            else
+            {
+                if (lblstatus.Text == "Paid" && lblorder.Text == "Received")
+                {
+                    try
+                    {
+                        con.Open();
+                        SqlCommand cmd1 = con.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "DELETE FROM orders WHERE Orderid = '" + lblid.Text + "'";
+                        cmd1.ExecuteNonQuery();
+                        con.Close();
+                        display();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error Occured");
+                    }
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (lblorder.Text == "Received")
+            {
+                MessageBox.Show("Already Received");
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Received?", "Order status", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    if (lblorder.Text == "On process")
+                    {
+                        lblorder.Text = "Received";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Already Received");
+                    }
 
+                    if (con.State != ConnectionState.Open)
+                    {
+                        try
+                        {
+                            con.Open();
+                            SqlCommand cmd = con.CreateCommand();
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "UPDATE orders SET Orderr = '" + lblorder.Text + "' WHERE Orderid = '" + lblid.Text + "'";
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Order Received!");
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error connecting database" + ex, "Error message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        finally
+                        {
+                            con.Close();
+                            display();
+                        }
+                    }
+                }
+            }
+
+            
+        }
+
+        private void lblid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "SELECT * FROM orders WHERE Order id = @Order id";
+                cmd.Parameters.AddWithValue("@Order id", txtsearch.Text);
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred: " + ex.Message);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (lblstatus.Text == "Paid")
+            {
+                try
+                {
+                    /*con.Open();
+                    string updataData = "UPDATE orders SET Status = 'Paid' WHERE Order id = '" + lblid.Text + "'";
+
+                    using (SqlCommand cmd = new SqlCommand(updataData, con))
+                    {
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Done", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }*/
+                    con.Open();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "UPDATE orders SET Status = '" + lblstatus.Text + "' WHERE Order id = '" + lblid.Text + "'";
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Order paid");
+                    con.Close();
+                    display();
+                }
+                catch
+                {
+                    MessageBox.Show("Error occured");
+                }
+            }
         }
     }
 }

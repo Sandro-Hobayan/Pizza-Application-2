@@ -16,5 +16,12 @@ namespace Pizza_Application_2
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+        }
     }
 }

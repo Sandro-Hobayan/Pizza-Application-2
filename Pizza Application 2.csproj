@@ -106,6 +106,9 @@
     <Compile Include="Signup.Designer.cs">
       <DependentUpon>Signup.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Accounts.resx">
+      <DependentUpon>Accounts.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CreateOrder.resx">
       <DependentUpon>CreateOrder.cs</DependentUpon>
     </EmbeddedResource>

@@ -38,7 +38,7 @@
             this.lblpizza = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblid = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.lbltotal = new System.Windows.Forms.Label();
             this.lblstatus = new System.Windows.Forms.Label();
             this.lblorder = new System.Windows.Forms.Label();
@@ -50,6 +50,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.txtsearch = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -176,7 +179,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.lblid);
-            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.lbltotal);
             this.panel2.Controls.Add(this.lblstatus);
             this.panel2.Controls.Add(this.lblorder);
@@ -202,17 +205,17 @@
             this.lblid.Size = new System.Drawing.Size(0, 20);
             this.lblid.TabIndex = 20;
             // 
-            // label9
+            // label8
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(15, 11);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 20);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Order ID;";
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(15, 11);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 20);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Order ID:";
             // 
             // lbltotal
             // 
@@ -349,9 +352,46 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // txtsearch
+            // 
+            this.txtsearch.Location = new System.Drawing.Point(540, 540);
+            this.txtsearch.Name = "txtsearch";
+            this.txtsearch.Size = new System.Drawing.Size(100, 20);
+            this.txtsearch.TabIndex = 16;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DimGray;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button4.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(688, 534);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(135, 31);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Search";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DimGray;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button5.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(28, 567);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(135, 31);
+            this.button5.TabIndex = 18;
+            this.button5.Text = "Update";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // orderid
             // 
-            this.orderid.DataPropertyName = "Order id";
+            this.orderid.DataPropertyName = "Orderid";
             this.orderid.HeaderText = "Order ID";
             this.orderid.Name = "orderid";
             // 
@@ -406,6 +446,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 623);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -423,6 +466,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -439,7 +483,10 @@
         private System.Windows.Forms.Label lblcrust;
         private System.Windows.Forms.Label lblsize;
         private System.Windows.Forms.Label lblpizza;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbltotal;
         private System.Windows.Forms.Label lblstatus;
         private System.Windows.Forms.Label lblorder;
@@ -447,9 +494,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblid;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtsearch;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderid;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
