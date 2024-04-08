@@ -299,36 +299,5 @@ namespace Pizza_Application_2
                 }
             }
         }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (lblstatus.Text == "Paid")
-            {
-                try
-                {
-                    /*con.Open();
-                    string updataData = "UPDATE orders SET Status = 'Paid' WHERE Order id = '" + lblid.Text + "'";
-
-                    using (SqlCommand cmd = new SqlCommand(updataData, con))
-                    {
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Done", "Order information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }*/
-                    con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "UPDATE orders SET Status = '" + lblstatus.Text + "' WHERE Order id = '" + lblid.Text + "'";
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Order paid");
-                    con.Close();
-                    display();
-                }
-                catch
-                {
-                    MessageBox.Show("Error occured");
-                }
-            }
-        }
     }
 }

@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dgv1 = new System.Windows.Forms.DataGridView();
+            this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.order = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pizza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.crust = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toppings = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,15 +60,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.txtsearch = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.orderid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.order = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pizza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.size = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.crust = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toppings = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,6 +83,58 @@
             this.dgv1.Size = new System.Drawing.Size(440, 473);
             this.dgv1.TabIndex = 0;
             this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
+            // 
+            // orderid
+            // 
+            this.orderid.DataPropertyName = "Orderid";
+            this.orderid.HeaderText = "Order ID";
+            this.orderid.Name = "orderid";
+            // 
+            // total
+            // 
+            this.total.DataPropertyName = "Total";
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "Status";
+            this.status.HeaderText = "Status";
+            this.status.Name = "status";
+            // 
+            // order
+            // 
+            this.order.DataPropertyName = "Orderr";
+            this.order.HeaderText = "Order";
+            this.order.Name = "order";
+            // 
+            // pizza
+            // 
+            this.pizza.DataPropertyName = "Pizza";
+            this.pizza.HeaderText = "Pizza";
+            this.pizza.Name = "pizza";
+            this.pizza.Visible = false;
+            // 
+            // size
+            // 
+            this.size.DataPropertyName = "Size";
+            this.size.HeaderText = "Size";
+            this.size.Name = "size";
+            this.size.Visible = false;
+            // 
+            // crust
+            // 
+            this.crust.DataPropertyName = "Crusttype";
+            this.crust.HeaderText = "Crust type";
+            this.crust.Name = "crust";
+            this.crust.Visible = false;
+            // 
+            // toppings
+            // 
+            this.toppings.DataPropertyName = "Extratoppings";
+            this.toppings.HeaderText = "Extra toppings";
+            this.toppings.Name = "toppings";
+            this.toppings.Visible = false;
             // 
             // button2
             // 
@@ -374,79 +425,11 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.DimGray;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Cooper Black", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(28, 567);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(135, 31);
-            this.button5.TabIndex = 18;
-            this.button5.Text = "Update";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // orderid
-            // 
-            this.orderid.DataPropertyName = "Orderid";
-            this.orderid.HeaderText = "Order ID";
-            this.orderid.Name = "orderid";
-            // 
-            // total
-            // 
-            this.total.DataPropertyName = "Total";
-            this.total.HeaderText = "Total";
-            this.total.Name = "total";
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "Status";
-            this.status.HeaderText = "Status";
-            this.status.Name = "status";
-            // 
-            // order
-            // 
-            this.order.DataPropertyName = "Orderr";
-            this.order.HeaderText = "Order";
-            this.order.Name = "order";
-            // 
-            // pizza
-            // 
-            this.pizza.DataPropertyName = "Pizza";
-            this.pizza.HeaderText = "Pizza";
-            this.pizza.Name = "pizza";
-            this.pizza.Visible = false;
-            // 
-            // size
-            // 
-            this.size.DataPropertyName = "Size";
-            this.size.HeaderText = "Size";
-            this.size.Name = "size";
-            this.size.Visible = false;
-            // 
-            // crust
-            // 
-            this.crust.DataPropertyName = "Crusttype";
-            this.crust.HeaderText = "Crust type";
-            this.crust.Name = "crust";
-            this.crust.Visible = false;
-            // 
-            // toppings
-            // 
-            this.toppings.DataPropertyName = "Extratoppings";
-            this.toppings.HeaderText = "Extra toppings";
-            this.toppings.Name = "toppings";
-            this.toppings.Visible = false;
-            // 
             // PendingOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 623);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.txtsearch);
             this.Controls.Add(this.button3);
@@ -496,7 +479,6 @@
         private System.Windows.Forms.Label lblid;
         private System.Windows.Forms.TextBox txtsearch;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderid;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;

@@ -40,19 +40,23 @@ namespace Pizza_Application_2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            DialogResult dr = MessageBox.Show("Do you really want to delete data?", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if(dr == DialogResult.OK)
             {
-                con.Open();
-                SqlCommand cmd1 = con.CreateCommand();
-                cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "DELETE FROM doneorders WHERE Orderid = '" + lblid.Text + "'";
-                cmd1.ExecuteNonQuery();
-                con.Close();
-                display();
-            }
-            catch
-            {
-                MessageBox.Show("Error Occured");
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd1 = con.CreateCommand();
+                    cmd1.CommandType = CommandType.Text;
+                    cmd1.CommandText = "DELETE FROM doneorders WHERE Orderid = '" + lblid.Text + "'";
+                    cmd1.ExecuteNonQuery();
+                    con.Close();
+                    display();
+                }
+                catch
+                {
+                    MessageBox.Show("Error Occured");
+                }
             }
         }
 
